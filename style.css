@@ -22,8 +22,11 @@ body {
     margin-bottom: 40px;
   }
   
-  .logo img {
+  #logo_empresa {
     height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
   
   nav ul {
