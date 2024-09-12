@@ -23,10 +23,12 @@ body {
   }
   
   #logo_empresa {
-    height: 50px;
+    height: 210px;
     justify-content: center;
     align-items: center;
     display: flex;
+    margin-top: -60px;
+    margin-left: 110px;
   }
   
   nav ul {
@@ -38,8 +40,29 @@ body {
   
   nav li {
     margin-left: 20px;
+    padding: 5px;
+  }
+
+  nav li :hover{
+    color:#3e8e41;
+  }
+
+  nav ul li #logout a{
+    display: flex;
+    align-items: center;
+    background-color: #3e8e41;
+    padding: 5px 10px;
+    border-radius: 5px;
   }
   
+  nav ul li #logout a i{
+    margin-right: 5px;
+  }
+
+  nav ul li #logout a :hover{
+    background-color:#1a471c;
+  }
+
   nav a {
     text-decoration: none;
     color: #fff;
