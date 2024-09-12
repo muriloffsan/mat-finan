@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalValue = totalEntradas + totalSaidas;
         total.textContent = totalValue >= 0 ? `R$ ${totalValue.toFixed(2)}` : `-R$ ${Math.abs(totalValue).toFixed(2)}`;
 
-        // Alterar a cor de fundo com base no valor total
         const totalCard = total.parentElement;
         if (totalValue < 0) {
             totalCard.classList.add('total-negativo');
