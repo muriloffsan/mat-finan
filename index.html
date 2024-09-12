@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finançai</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="logo.png" alt="Finançai">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Simulador Financiamento</a></li>
+          <li><a href="#">Educação</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="balance">
+      <div class="card">
+        <h2>Entradas</h2>
+        <p id="entradas">R$ 10.000,00</p>
+        <button id="add-entrada">+</button>
+      </div>
+      <div class="card">
+        <h2>Saídas</h2>
+        <p id="saidas">-R$ 11.000,00</p>
+        <button id="add-saida">-</button>
+      </div>
+      <div class="card">
+        <h2>Total</h2>
+        <p id="total">-R$ 1.000,00</p>
+      </div>
+    </section>
+    <section class="transactions">
+      <h2>Nova Transação</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="transactions-table">
+          <tr>
+            <td>Salário</td>
+            <td class="valor">R$ 10.000,00</td>
+            <td>05/08/2024</td>
+            <td><button class="delete-transaction" data-id="1">-</button></td>
+          </tr>
+          <tr>
+            <td>Aluguel</td>
+            <td class="valor">-R$ 2.000,00</td>
+            <td>05/08/2024</td>
+            <td><button class="delete-transaction" data-id="2">-</button></td>
+          </tr>
+          <tr>
+            <td>Cartão</td>
+            <td class="valor">-R$ 9.000,00</td>
+            <td>08/08/2024</td>
+            <td><button class="delete-transaction" data-id="3">-</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>Developed by LFCS</p>
+    <ul class="social-media">
+      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+    </ul>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
