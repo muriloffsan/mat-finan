@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrimeFortune</title>
   <link rel="stylesheet" href="educacao.css">
+  <script src="educacao.js"></script>
 </head>
-<body>
+<body class="planejamento"> 
   <header>
     <div class="container">
       <nav>
@@ -22,3 +23,26 @@
           </li>
         </ul>
       </nav>
+    </div>
+  </header>
+  <div class="arrow left" onclick="previousCard()">&#9664;</div> 
+  <div class="card" id="card1">
+    <h1>Saiba mais sobre Educação Financeira</h1>
+    <p>A Educação Financeira é uma forma de buscar conhecimento sobre como lidar com o dinheiro, realizando a tarefa de gerenciar de forma inteligente os recursos que uma pessoa tem disponível. A grosso modo, pode-se dizer que a atividade está ligada a busca pelo equilíbrio da sua vida financeira.
+      Seguindo as Normas da Base Nacional Comum Curricular (BNCC), a educação financeira passou a ser obrigatória nas escolas em 2020, e um dos objetivos é conscientizar jovens e crianças sobre a importância de lidar com as finanças de maneira consciente, estimulando-as, inclusive, a debater o assunto em casa com a família.</p>
+  </div>
+  <div class="card2" id="card2" style="display: none;">
+    <h1>Juros Simples e Composto</h1>
+    <p>
+      Os juros simples e compostos são cálculos efetuados com o objetivo de corrigir os valores envolvidos nas transações financeiras, isto é, a correção que se faz ao emprestar ou aplicar uma determinada quantia durante um período de tempo.
+      O valor pago ou resgatado dependerá da taxa cobrada pela operação e do período que o dinheiro ficará emprestado ou aplicado. Quanto maior a taxa e o tempo, maior será este valor.</p>
+  </div>
+  <div class="card3" id="card3" style="display: none;">
+    <h1>Diferença entre Juros Simples e Composto</h1>
+    <p>Nos juros simples a correção é aplicada a cada período e considera apenas o valor inicial. Nos juros compostos a correção é feita em cima de valores já corrigidos.
+      Por isso, os juros compostos também são chamados de juros sobre juros, ou seja, o valor é corrigido sobre um valor que já foi corrigido.
+      Sendo assim, para períodos maiores de aplicação ou empréstimo a correção por juros compostos fará com que o valor final a ser recebido ou pago seja maior que o valor obtido com juros simples.</p>
+  </div>
+  <div class="arrow right" onclick="nextCard()">&#9654;</div> 
+</body>
+</html>

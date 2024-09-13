@@ -4,7 +4,26 @@ body {
   color: #fff;
   margin: 0;
   line-height: 1.6;
-  background-image: url('fundografico.jpg'); 
+}
+
+body.planejamento {
+  background-image: url('planejamento.jpg');
+}
+
+body.reserva {
+  background-image: url('reserva.jpg');
+}
+
+body.investir {
+  background-image: url('investir.jpg');
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  margin: 0;
+  line-height: 1.6;
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
@@ -75,3 +94,90 @@ nav ul li#logout a {
 nav ul li#logout a:hover {
   background-color: #1a471c;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  border: 1px solid  #181818;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color:  #181818;
+  margin:0 20px;
+  font-family: Arial, sans-serif;
+  margin-left: 460px;
+  margin-right: 150px;
+  opacity: 0.8;
+  margin-top: 70px;
+  transition: opacity 0.5s ease;
+}
+
+.card p, .card h1 {
+  margin-left: 20px;
+  margin-right: 20px; 
+}
+
+.card2 {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  border: 1px solid  #181818;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color:  #181818;
+  margin:0 20px;
+  font-family: Arial, sans-serif;
+  margin-left: 460px;
+  margin-right: 150px;
+  opacity: 0.8;
+  margin-top: 100px;
+}
+
+.card2 p, .card2 h1 {
+  margin-left: 20px;
+  margin-right: 20px; 
+}
+
+.card3 {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #181818;
+  margin:0 20px;
+  font-family: Arial, sans-serif;
+  margin-left: 460px;
+  margin-right: 150px;
+  opacity: 0.8;
+  margin-top: 100px;
+}
+
+.card3 p, .card3 h1 {
+  margin-left: 20px;
+  margin-right: 20px; 
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  position: fixed;
+  top: 50%; 
+  transform: translateY(-50%);
+  padding: 10px;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+
