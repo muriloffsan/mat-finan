@@ -1,74 +1,85 @@
-
 body {
-    font-family: sans-serif;
-    background-color: #1a1a1a;
-    color: #fff;
-    margin: 0;
-    line-height: 1.6;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  header {
-    background-color: #212121;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-  }
-  
-  #logo_empresa {
-    height: 210px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin-top: -60px;
-    margin-left: 110px;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  nav li {
-    margin-left: 20px;
-    padding: 5px;
-  }
+  font-family: sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  margin: 0;
+  line-height: 1.6;
+  background-image: url('fundografico.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
 
-  nav li :hover{
-    color:#3e8e41;
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  nav ul li #logout a{
-    display: flex;
-    align-items: center;
-    background-color: #3e8e41;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  nav ul li #logout a i{
-    margin-right: 5px;
-  }
+header {
+  background-color: #212121;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  nav ul li #logout a :hover{
-    background-color:#1a471c;
-  }
+#logo_empresa {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  width: 300px; 
+  height: auto; 
+  margin-right: 8px; 
+  vertical-align: middle;
 
-  nav a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-  }
-  
+}
+
+#logo_empresa img {
+  height: 70px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  margin-left: 20px;
+  padding: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+nav li img {
+  height: 70px; 
+}
+
+nav ul li:hover a {
+  color: #3e8e41;
+}
+
+nav ul li#logout a {
+  background-color: #3e8e41;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+nav ul li#logout a:hover {
+  background-color: #1a471c;
+}
+
   main {
     display: flex;
     flex-direction: column;
@@ -197,4 +208,62 @@ body {
 }
 .add-saida-button {
     background-color: #f44336;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    color: #fff;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-content input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  #saveTransaction {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #saveTransaction:hover {
+    background-color: #45a049;
   }

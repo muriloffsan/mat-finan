@@ -6,8 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const addEntradaButton = document.getElementById('add-entrada');
     const addSaidaButton = document.getElementById('add-saida');
 
-    let transactions = [
-    ];
+    const modal = document.getElementById('transactionModal');
+    const closeModal = document.querySelector('.close');
+    const saveTransactionButton = document.getElementById('saveTransaction');
+    let transactionType = '';
+
+    let transactions = [];
 
     function updateBalance() {
         let totalEntradas = 0;
@@ -68,30 +72,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function addTransaction(type) {
-        const description = prompt("Digite a descrição da transação:");
-        const value = parseFloat(prompt("Digite o valor da transação:"));
-        const date = prompt("Digite a data da transação (DD/MM/AAAA):");
+    function addTransaction() {
+        const description = document.getElementById('description').value;
+        const value = parseFloat(document.getElementById('value').value);
+        const date = document.getElementById('date').value;
 
         if (description && !isNaN(value) && date) {
             const newTransaction = {
                 id: transactions.length > 0 ? transactions[transactions.length - 1].id + 1 : 1,
                 description: description,
-                value: type === 'entrada' ? value : -value,
+                value: transactionType === 'entrada' ? value : -value,
                 date: date,
-                type: type
+                type: transactionType
             };
 
             transactions.push(newTransaction);
             updateBalance();
             renderTransactions();
+
+            modal.style.display = 'none';
         } else {
             alert("Por favor, preencha todos os campos corretamente.");
         }
     }
 
-    addEntradaButton.addEventListener('click', () => addTransaction('entrada'));
-    addSaidaButton.addEventListener('click', () => addTransaction('saida'));
+    addEntradaButton.addEventListener('click', () => {
+        transactionType = 'entrada';
+        modal.style.display = 'block';
+    });
+
+    addSaidaButton.addEventListener('click', () => {
+        transactionType = 'saida';
+        modal.style.display = 'block';
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    saveTransactionButton.addEventListener('click', addTransaction);
 
     updateBalance();
     renderTransactions();

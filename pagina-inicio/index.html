@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finançai</title>
+  <title>PrimeFortune</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="container">
-        <img src="../imagens/logo.png" alt="PrimeFortune" id="logo_empresa">
       <nav>
         <ul>
+          <li><img src="../imagens/logo.png" alt="PrimeFortune" id="logo_empresa"></li>
           <li><a href="#">Home</a></li>
           <li><a href="../pagina-simulador/simulador.html">Simulador Financiamento</a></li>
           <li><a href="../pagina-educacao/educacao.html">Educação</a></li>
@@ -74,6 +74,22 @@
         </tbody>
       </table>
     </section>
+    <div id="transactionModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Nova Transação</h2>
+        <label for="description">Descrição:</label>
+        <input type="text" id="description" placeholder="Descrição da transação">
+        
+        <label for="value">Valor:</label>
+        <input type="number" id="value" placeholder="Valor da transação">
+        
+        <label for="date">Data:</label>
+        <input type="date" id="date">
+        
+        <button id="saveTransaction">Salvar</button>
+      </div>
+    </div>
   </main>
 
   <footer class="container">
