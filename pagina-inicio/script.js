@@ -65,9 +65,29 @@ document.addEventListener('DOMContentLoaded', function() {
         deleteButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const transactionId = parseInt(button.dataset.id);
-                transactions = transactions.filter(transaction => transaction.id !== transactionId);
-                updateBalance();
-                renderTransactions();
+                
+                // SweetAlert confirmation before deleting
+                Swal.fire({
+                    title: 'Você tem certeza?',
+                    text: "Essa ação não poderá ser desfeita!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sim, apagar!',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        transactions = transactions.filter(transaction => transaction.id !== transactionId);
+                        updateBalance();
+                        renderTransactions();
+                        Swal.fire(
+                            'Apagado!',
+                            'A transação foi apagada.',
+                            'success'
+                        );
+                    }
+                });
             });
         });
     }
@@ -78,6 +98,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const date = document.getElementById('date').value;
 
         if (description && !isNaN(value) && date) {
+            // Verificar se o valor é negativo em uma entrada
+            if (transactionType === 'entrada' && value < 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Valor inválido',
+                    text: 'O valor de uma entrada não pode ser negativo.'
+                });
+                return; // Impedir o salvamento da transação
+            }
+
             const newTransaction = {
                 id: transactions.length > 0 ? transactions[transactions.length - 1].id + 1 : 1,
                 description: description,
@@ -92,7 +122,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             modal.style.display = 'none';
         } else {
-            alert("Por favor, preencha todos os campos corretamente.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro',
+                text: 'Por favor, preencha todos os campos corretamente.'
+            });
         }
     }
 
