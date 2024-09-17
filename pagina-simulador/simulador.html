@@ -26,21 +26,27 @@
     </header>
     <div class="form-box">
       <h1>Simulador Financeiro</h1>
-        <form id="simuladorForm">
-            <label for="valorInicial">Valor Inicial:</label>
-            <input type="number" id="valorInicial" placeholder="Ex: 1000" required>
-            
-            <label for="taxaJuros">Taxa de Juros (% ao ano):</label>
-            <input type="number" id="taxaJuros" placeholder="Ex: 5" required>
-    
-            <label for="dataInicio">Data de Início:</label>
-            <input type="date" id="dataInicio" required>
-    
-            <label for="anos">Número de Anos:</label>
-            <input type="number" id="anos" placeholder="Ex: 10" required>
-    
-            <button type="submit">Calcular</button>
-        </form>
+      <form id="simuladorForm">
+          <label for="tipoFinanciamento">Tipo de Financiamento:</label>
+          <select id="tipoFinanciamento" name="tipoFinanciamento">
+              <option value="imobiliario">Imobiliário</option>
+              <option value="automotivo">Automotivo</option>
+          </select>
+          
+          <label for="valorInicial">Valor Inicial:</label>
+          <input type="number" id="valorInicial" name="valorInicial" placeholder="Ex: 1000" required>
+          
+          <label for="taxaJuros">Taxa de Juros (% ao ano):</label>
+          <input type="number" id="taxaJuros" name="taxaJuros" placeholder="Ex: 5" required>
+          
+          <label for="dataInicio">Data de Início:</label>
+          <input type="date" id="dataInicio" name="dataInicio" required>
+          
+          <label for="anos">Número de Anos:</label>
+          <input type="number" id="anos" name="anos" placeholder="Ex: 10" required>
+          
+          <button type="submit">Calcular</button>
+      </form>
         <script src="simulador.js"></script>
         <canvas id="grafico" width="400" height="200"></canvas>
       </div>
